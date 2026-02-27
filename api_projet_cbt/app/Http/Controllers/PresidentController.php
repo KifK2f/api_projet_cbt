@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class PresidentController extends Controller
 {
-    //Récupérer tout le contenu de la table photos
+    //Récupérer tout le contenu de la table
     public function index()
     {
         $president = President::all(); // Récupérer tous les éléments de la table president
