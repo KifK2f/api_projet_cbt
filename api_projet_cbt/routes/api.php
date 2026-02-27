@@ -4,9 +4,10 @@ use App\Http\Controllers\PresidentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+// endpoints de /president
 Route::get('/presidents', [PresidentController::class, 'index']);
 
-// Route::post('/pictures', [PictureController::class, 'store'])->middleware('App\Http\Middleware\React');
+Route::post('/presidents', [PresidentController::class, 'store']);
 
 
 // Route::post('/register', [AuthenticationController::class, 'register']);
