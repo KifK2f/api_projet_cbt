@@ -4,6 +4,10 @@ use App\Http\Controllers\ConfessionFoiController;
 use App\Http\Controllers\HistoireSectionController;
 use App\Http\Controllers\OrganisationCBTController;
 use App\Http\Controllers\PresidentController;
+use App\Http\Controllers\ZoneController;
+use App\Http\Controllers\EgliseController;
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +30,35 @@ Route::post('/organisation-gouvernance', [OrganisationCBTController::class, 'sto
 Route::get('/confession-foi', [ConfessionFoiController::class, 'index']);
 
 Route::post('/confession-foi', [ConfessionFoiController::class, 'store']);
+
+
+// endpoints de /zones
+Route::prefix('zones')->group(function(){
+
+    Route::get('/', [ZoneController::class,'index']);
+
+    Route::get('/{id}', [ZoneController::class,'show']);
+
+    Route::post('/', [ZoneController::class,'store']);
+
+    Route::put('/{id}', [ZoneController::class,'update']);
+
+    Route::delete('/{id}', [ZoneController::class,'destroy']);
+
+});
+
+// endpoints de /eglises
+Route::prefix('eglises')->group(function(){
+
+    Route::get('/', [EgliseController::class,'index']);
+
+    Route::get('/{id}', [EgliseController::class,'show']);
+
+    Route::post('/', [EgliseController::class,'store']);
+
+    Route::put('/{id}', [EgliseController::class,'update']);
+
+    Route::delete('/{id}', [EgliseController::class,'destroy']);
+
+});
+
