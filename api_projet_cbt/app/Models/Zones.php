@@ -16,7 +16,7 @@ class Zones extends Model
     //Une zone peut avoir plusieurs églises
     public function eglises()
     {
-        return $this->hasMany(Eglises::class);
+        return $this->hasMany(Eglises::class, 'zone_id');
     }
 
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\OrganisationCBTController;
 use App\Http\Controllers\PresidentController;
 use App\Http\Controllers\ZoneController;
 use App\Http\Controllers\EgliseController;
+use App\Http\Controllers\DateUtileController;
 
 
 use Illuminate\Http\Request;
@@ -62,3 +63,18 @@ Route::prefix('eglises')->group(function(){
 
 });
 
+
+// endpoints de /dates-utiles
+Route::prefix('dates-utiles')->group(function(){
+
+    Route::get('/', [DateUtileController::class,'index']);
+
+    Route::get('/{id}', [DateUtileController::class,'show']);
+
+    Route::post('/', [DateUtileController::class,'store']);
+
+    Route::put('/{id}', [DateUtileController::class,'update']);
+
+    Route::delete('/{id}', [DateUtileController::class,'destroy']);
+
+});
